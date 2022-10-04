@@ -5,7 +5,7 @@ const cacheName = "cache-pwajson";
 self.addEventListener("install", function (event) {
     event.waitUntil(
         caches.open(cacheName).then(function(cache){
-            return cache.addAll(["/pwaupdatetest/", "/pwaupdatetest/index.html", "pwaupdatetest/morten.pmg", "pwaupdatetest/nina.png", "pwaupdatetest/olivia.png", "pwaupdatetest/javascript.js"])
+            return cache.addAll(["/pwaupdatetest/", "/pwaupdatetest/index.html", "/pwaupdatetest/morten.png", "/pwaupdatetest/nina.png", "/pwaupdatetest/olivia.png", "/pwaupdatetest/javascript.js", "/pwaupdatetest/members.json"])
         })
     )
 })
@@ -16,4 +16,4 @@ self.addEventListener("fetch", function(event){
     ))
 })
 
-console.log("update 1")
+console.log("update 2")
