@@ -17,6 +17,12 @@
         "lastname" : "Johnson",
         "age" : 23,
         "image": "nina.png"
+    },
+    {
+        "firstname" : "Jannik",
+        "lastname" : "Berthelsen",
+        "age" : 99,
+        "image": "nina.png"
     }
 ]
 }

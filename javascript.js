@@ -1,3 +1,21 @@
+const cacheName = "cache-pwajson";
+
+//Når websitet indlæses, cache ressourcer i listen //
+
+self.addEventListener("install", function (event) {
+    event.waitUntil(
+        caches.open(cacheName).then(function(cache){
+            return cache.addAll(["/pwajson/", "/pwajson/index.html", "pwajson/morten.pmg", "pwajson/nina.png", "pwajson/olivia.png"])
+        })
+    )
+})
+
+self.addEventListener("fetch", function(event){
+    event.respondWIth(fetch(event.request).catch(()=>
+    caches.open(cacheName).then(cache=>cache.match(event.request))
+    ))
+})
+
 fetch("members.json")
   .then(function (data) {
     return data.json();
